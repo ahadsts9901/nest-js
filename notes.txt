@@ -1,0 +1,22 @@
+# Lesson 01
+
+create a new module ===> nest g module moduleName
+
+create a new controller ===> nest g controller controllerName
+
+create a new provider/service ===> nest g service providerName/serviceName
+
+
+user.service.ts     ===> service/provider
+user.controller.ts  ===> controller
+user.module.ts      ===> module
+
+user.service.spec.ts     ===> service/provider test file
+user.controller.spec.ts  ===> controller test file
+
+
+
+
+# Lesson 02
+
+@Controller, @Injectable =====> this is called decorator
