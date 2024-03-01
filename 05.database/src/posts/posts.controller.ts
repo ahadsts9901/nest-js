@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 
 @Controller('posts')
 export class PostsController {
@@ -15,6 +15,11 @@ export class PostsController {
 
     @Delete(':postId')
     deleteOne(@Param('postId') postId: string) {
+        return postId
+    }
+
+    @Put(':postId')
+    updateOne(@Param('postId') postId: string, @Body() updatedPost: {}) {
         return postId
     }
 
