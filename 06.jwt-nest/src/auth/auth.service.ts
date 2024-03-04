@@ -114,14 +114,14 @@ export class AuthService {
 
     }
 
-    async logout(req: Request, res: Response){
+    async logout(req: Request, res: Response) {
 
         res.clearCookie("hart")
 
         return res.send({
             message: "logout successfull"
         })
-        
+
     }
 
 }
