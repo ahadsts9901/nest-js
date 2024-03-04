@@ -13,4 +13,9 @@ export class AuthController {
         return this.authService.signup(req, res, createUserDto)
     }
 
+    @Post('login')
+    login(@Req() req, @Res() res, @Body() loginUserDto: LoginUserDto) {
+        return this.authService.login(req, res, loginUserDto)
+    }
+
 }
