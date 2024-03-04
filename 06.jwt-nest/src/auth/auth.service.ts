@@ -91,7 +91,7 @@ export class AuthService {
 
         const isMatch = await bcrypt.compare(password, user.password)
 
-        if(!isMatch){
+        if (!isMatch) {
             throw new BadRequestException('email or password incorrect')
         }
 
@@ -102,7 +102,7 @@ export class AuthService {
             _id: user._id
         })
 
-        res.cookie('hatr', hart, {
+        res.cookie('hart', hart, {
             httpOnly: true,
             secure: true,
             expires: new Date(Date.now() + 86400000) // 24 hours expiry
@@ -112,6 +112,16 @@ export class AuthService {
             message: "login successful",
         })
 
+    }
+
+    async logout(req: Request, res: Response){
+
+        res.clearCookie("hart")
+
+        return res.send({
+            message: "logout successfull"
+        })
+        
     }
 
 }

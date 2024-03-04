@@ -18,4 +18,9 @@ export class AuthController {
         return this.authService.login(req, res, loginUserDto)
     }
 
+    @Post('logout')
+    logout(@Req() req, @Res() res) {
+        return this.authService.logout(req, res)
+    }
+
 }
