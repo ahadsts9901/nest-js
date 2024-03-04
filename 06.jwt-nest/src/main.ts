@@ -2,7 +2,6 @@ import "./mongodb"
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as cookieParser from "cookie-parser"
-import { NextFunction } from "express";
 
 async function bootstrap() {
 
@@ -10,6 +9,10 @@ async function bootstrap() {
 
   app.use(cookieParser());
 
+  app.enableCors()
+
   await app.listen(3000);
+
 }
+
 bootstrap();
